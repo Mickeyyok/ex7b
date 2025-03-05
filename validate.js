@@ -6,14 +6,17 @@ function checkSID() {
 	  return false;
 	}
   }
-  
+
 function checkCandiNo() {
   let candi = (document.getElementById("candi").value).trim();
-  if (isNaN(candi) || candi < 1) {
-    return false;
-  } else {
-    return true;
+
+  if (/^\d+$/.test(candi)) { 
+    let num = parseInt(candi);
+    if (num >= 1 && num <= 10) {
+      return true;
+    }
   }
+  return false;
 }
 
 function validateForm(){
